@@ -2,7 +2,7 @@
 
 import "./globals.css"; // Import global styles
 import { NavBar, Footer } from "@/Components"; // Adjust the import based on your directory structure
-
+import { CrowdFundingProvider } from "@/Context/CrowFunding";
 export const metadata = {
   title: 'My App Title',
   description: 'Description of my app',
@@ -10,12 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <>
+    <CrowdFundingProvider>
         <NavBar />
         {children} {/* This will render the page content */}
         <Footer />
-      </body>
-    </html>
+      </CrowdFundingProvider>
+      </>
   );
 }
